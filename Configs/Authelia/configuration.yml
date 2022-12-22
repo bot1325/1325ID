@@ -1111,7 +1111,20 @@ storage:
 notifier:
   ## You can disable the notifier startup check by setting this to true.
   disable_startup_check: true
-
+  smtp:
+    username: youremail@gmail.com #your email address
+    password: Y0uRp@55W0rD! #your email password
+    host: smtp.gmail.com #email smtp server
+    port: 587 #email smtp port
+    sender: youremail@gmail.com
+    identifier: localhost
+    subject: "[Authelia] {title}" #email subject
+    startup_check_address: youremail@gmail.com
+    disable_require_tls: false
+    disable_html_emails: false
+    tls:
+      skip_verify: false
+      minimum_version: TLS1.2
   ##
   ## File System (Notification Provider)
   ##
