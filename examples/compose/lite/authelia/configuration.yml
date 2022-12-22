@@ -64,11 +64,26 @@ storage:
 
 notifier:
   disable_startup_check: true #true/false
+
   smtp:
-    username: test
-    # This secret can also be set using the env variables AUTHELIA_NOTIFIER_SMTP_PASSWORD_FILE
-    password: password
-    host: mail.example.com
-    port: 25
-    sender: admin@example.com
+    username: youremail@gmail.com #your email address
+    password: Y0uRp@55W0rD! #your email password
+    host: smtp.gmail.com #email smtp server
+    port: 587 #email smtp port
+    sender: youremail@gmail.com
+    identifier: localhost
+    subject: "[Authelia] {title}" #email subject
+    startup_check_address: youremail@gmail.com
+    disable_require_tls: false
+    disable_html_emails: false
+    tls:
+      skip_verify: false
+      minimum_version: TLS1.2
+  # smtp:
+  #   username: test
+  #   # This secret can also be set using the env variables AUTHELIA_NOTIFIER_SMTP_PASSWORD_FILE
+  #   password: password
+  #   host: mail.example.com
+  #   port: 25
+  #   sender: admin@example.com
 ...
