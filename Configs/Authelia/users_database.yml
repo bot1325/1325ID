@@ -7,9 +7,9 @@
 # This file can be used if you do not have an LDAP set up.
 
 users:
-  authelia:
+  1325ok:
     disabled: false
-    displayname: "1325ok"
+    displayname: "1325OK"
     password: "$argon2id$v=19$m=1024,t=1,p=8$OGZRZUNweGlLTndVTmxtcw$oCmL5UdOs6GscQDyfHjwp+ZIYWRoS1zaXcRpoNNJy0M"  # Password is 'authelia'
     email: admin@1325ok.com
     groups:
