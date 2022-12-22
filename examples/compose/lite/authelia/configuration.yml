@@ -64,7 +64,6 @@ storage:
 
 notifier:
   disable_startup_check: true #true/false
-
   smtp:
     username: youremail@gmail.com #your email address
     password: Y0uRp@55W0rD! #your email password
