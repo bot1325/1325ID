@@ -16,7 +16,7 @@ theme: light
 
 ## The secret used to generate JWT tokens when validating user identity by email confirmation. JWT Secret can also be
 ## set using a secret: https://www.authelia.com/c/secrets
-jwt_secret: a_very_important_secret
+jwt_secret: 1234567890abcdefghifjkl
 
 ## Default redirection URL
 ##
@@ -165,7 +165,7 @@ totp:
   disable: false
 
   ## The issuer name displayed in the Authenticator application of your choice.
-  issuer: authelia.com
+  issuer: 1325ok.com
 
   ## The TOTP algorithm to use.
   ## It is CRITICAL you read the documentation before changing this option:
@@ -470,6 +470,15 @@ authentication_backend:
   ##
   ## Important: Kubernetes (or HA) users must read https://www.authelia.com/t/statelessness
   ##
+  file:
+    path: /config/users_database.yml #this is where your authorized users are stored
+    password:
+      algorithm: argon2id
+      iterations: 1
+      key_length: 32
+      salt_length: 16
+      memory: 1024
+      parallelism: 8
   # file:
     # path: /config/users_database.yml
     # watch: false
@@ -861,12 +870,12 @@ regulation:
 ## Storage Provider Configuration
 ##
 ## The available providers are: `local`, `mysql`, `postgres`. You must use one and only one of these providers.
-# storage:
+storage:
   ## The encryption key that is used to encrypt sensitive information in the database. Must be a string with a minimum
   ## length of 20. Please see the docs if you configure this with an undesirable key and need to change it, you MUST use
   ## the CLI to change this in the database if you want to change it from a previously configured value.
   # encryption_key: you_must_generate_a_random_string_of_more_than_twenty_chars_and_configure_this
-
+  encryption_key: 1234567890abcdefgdfasdfasdf #added Dec 5 2021
   ##
   ## Local (Storage Provider)
   ##
@@ -875,9 +884,9 @@ regulation:
   ##
   ## Important: Kubernetes (or HA) users must read https://www.authelia.com/t/statelessness
   ##
-  # local:
+  local:
     ## Path to the SQLite3 Database.
-    # path: /config/db.sqlite3
+    path: /config/db.sqlite3
 
   ##
   ## MySQL / MariaDB (Storage Provider)
